@@ -1,0 +1,10 @@
+Manifest-Version: 1.0
+Implementation-Vendor: JUnit
+Implementation-Title: JUnit
+Implementation-Version: 4.13-SNAPSHOT
+Implementation-Vendor-Id: junit
+Build-Jdk: 1.7.0_91
+Built-By: guprado
+Created-By: Maven Integration for Eclipse
+Implementation-URL: http://junit.org
+
