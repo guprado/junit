@@ -563,5 +563,54 @@
                 </plugins>
             </build>
         </profile>
+	<profile>
+            <id>metrics</id>
+            <build>
+                <plugins>
+                    <!-- CHECKSTYLE -->
+                    <plugin>
+                        <artifactId>maven-checkstyle-plugin</artifactId>
+                        <version>2.9.1</version>
+                        <dependencies>
+                            <dependency>
+                                <groupId>com.wakaleo.gameoflife</groupId>
+                                <artifactId>gameoflife-build</artifactId>
+                                <version>${project.version}</version>
+                            </dependency>
+                        </dependencies>
+                        <configuration>
+                            <configLocation>custom-checkstyle.xml</configLocation>
+                        </configuration>
+                    </plugin>
+
+                    <!-- PMD -->
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-pmd-plugin</artifactId>
+                        <version>3.2</version>
+                        <configuration>
+                            <targetJdk>1.6</targetJdk>
+                            <aggregate>true</aggregate>
+                            <format>xml</format>
+                            <!-- CPD options -->
+                            <minimumTokens>20</minimumTokens>
+                            <!--<ignoreIdentifiers>true</ignoreIdentifiers>-->
+                            <failOnViolation>true</failOnViolation>
+                            <failurePriority>2</failurePriority>
+                        </configuration>
+                    </plugin>
+
+                    <!-- FINDBUGS -->
+                    <plugin>
+                        <artifactId>findbugs-maven-plugin</artifactId>
+                        <version>2.4.0</version>
+                        <configuration>
+                            <effort>Max</effort>
+                            <xmlOutput>true</xmlOutput>
+                        </configuration>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
     </profiles>
 </project>
